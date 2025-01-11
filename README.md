@@ -1,38 +1,50 @@
-# networks_assets
-Python tkinter app which takes model &amp; unique serials as scanned input and translates to readable text in an inventory spreadsheet.
-
 # Features and Flow
-GUI Layout:
 
-# Main window with:
-+ (Add) and - (Remove) buttons.
-Log View to display scanned details.
-Treeview for Inventory display.
-Input dialog for scanning serial numbers, which will:
-Auto-refresh after each scan for seamless user interaction.
-Close when "Finished" is pressed.
+## GUI Layout
+- **Main Window**:
+  - `+` (Add) and `-` (Remove) buttons.
+  - Log View to display scanned details.
+  - Treeview for displaying the inventory.
+- **Input Dialog** (for scanning serial numbers):
+  - Automatically refreshes after each scan for seamless user interaction.
+  - Closes when the "Finished" button is pressed.
 
-#Excel Sheets:
+---
 
-Models sheet for model and associated serial numbers.
-Inventory sheet to log scanned items (model and unique serial number).
-Timestamps sheet to log actions with timestamp, model, serial, and action type.
+## Excel Sheets
+1. **Models Sheet**:
+   - Stores models and associated serial numbers.
+2. **Inventory Sheet**:
+   - Logs scanned items, including the model and unique serial numbers.
+3. **Timestamps Sheet**:
+   - Logs actions with:
+     - Timestamp
+     - Model
+     - Serial
+     - Action type
 
-#Logic:
+---
 
-+ triggers the input dialog.
-First scanned serial looks up Models and finds the associated model.
-Model is recorded in Inventory and action logged in Timestamps.
-Second scanned serial is logged in the Inventory row and Timestamps.
-- will trigger an input dialog to remove an item by its serial number.
+## Logic
+- `+` Button:
+  - Triggers the input dialog.
+  - First scanned serial looks up the **Models Sheet** to find the associated model.
+  - Records the model in the **Inventory Sheet** and logs the action in the **Timestamps Sheet**.
+  - Second scanned serial is added to the same inventory row and logged in **Timestamps**.
+- `-` Button:
+  - Triggers an input dialog to remove an item by its serial number.
 
-#Functions:
+---
 
-Handle serial number scanning for both steps (model and unique serial).
-Update the sheets and log actions.
-Manage the inventory and logviews in real time.
+## Functions
+- Handle serial number scanning for both:
+  1. Model lookup.
+  2. Logging the unique serial number.
+- Update Excel sheets and log actions.
+- Manage the inventory and log views in real time.
 
-#Error Handling:
+---
 
-Handle cases where scanned serials don't match the Models sheet.
-Ensure unique serial numbers are not duplicated.
+## Error Handling
+- Handles cases where scanned serials do not match entries in the **Models Sheet**.
+- Ensures unique serial numbers are not duplicated.
