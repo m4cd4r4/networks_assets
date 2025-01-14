@@ -7,7 +7,7 @@
   - Treeview for displaying the inventory.
 - **Input Dialog** (for scanning serial numbers):
   - Automatically refreshes after each scan for seamless user interaction.
-  - Closes when the "Finished" button is pressed.
+  - Ends process when "X" is selected.
 
 ---
 
